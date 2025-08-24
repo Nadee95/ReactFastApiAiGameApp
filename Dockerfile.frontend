@@ -1,0 +1,23 @@
+# Dockerfile for React Frontend
+# Uses official Node.js image for security and performance
+FROM node:20-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install dependencies first for better caching
+COPY frontend/package.json frontend/package-lock.json* ./
+RUN npm install
+
+# Copy frontend source code
+COPY frontend/ ./
+
+# Expose port for Vite dev server
+EXPOSE 3000
+
+# Environment variable for Vite polling (useful in Docker)
+ENV CHOKIDAR_USEPOLLING=true
+
+# Start the development server
+CMD ["npm", "run", "dev", "--", "--host"]
+
