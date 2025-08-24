@@ -57,6 +57,7 @@ This project contains a FastAPI backend, a React frontend, and can connect to an
 ## Troubleshooting
 - If you encounter port conflicts, change the ports in `docker-compose.yml`.
 - For model connection issues, ensure the model service is running and accessible from the backend.
+- If you use an external AI service (such as OpenAI), make sure your API endpoint and API keys are correct and active in your environment variables. Invalid or missing keys will prevent the backend from generating stories.
 
 ---
 ## Credits
