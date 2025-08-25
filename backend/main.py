@@ -7,7 +7,20 @@ from routers import story, job
 
 from db.database import create_tables
 
+import logging
+
 create_tables()
+
+
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(levelname)s - %(asctime)s - %(name)s  - %(message)s',
+    handlers=[
+        logging.StreamHandler()
+    ]
+)
 
 app = FastAPI(
     title="Play with LLMs",

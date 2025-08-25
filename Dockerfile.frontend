@@ -13,7 +13,7 @@ RUN npm install
 COPY frontend/ ./
 
 # Expose port for Vite dev server
-EXPOSE 3000
+EXPOSE 5173
 
 # Environment variable for Vite polling (useful in Docker)
 ENV CHOKIDAR_USEPOLLING=true
